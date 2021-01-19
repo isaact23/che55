@@ -2,9 +2,9 @@ const generateID = require('./generate_id');
 const app = require('express')();
 const cors = require('cors');
 const http = require('http').createServer(app);
-// manages cors requestsi
+// manages cors requests
 app.use(cors())
-const io = require("socket.io")(http, {
+const io = require("socket.io") (http, {
     cors: {
         //origin of request
         origin: "*",
@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
         //generates new room and joins it
         let room = generateID(5);
         clientRooms[socket.id] = room;
-        //lets the frontend see the unique gamecode
+        //lets the client see the unique gamecode
         socket.emit('gamecode', room);
 
         socket.join(room);
@@ -136,7 +136,7 @@ io.on('connection', (socket) => {
     }
 })
 
-let port = process.env.PORT || 4000;
+let port = process.env.PORT || 5000;
 //listening on the server
 http.listen(port, () => {
     console.log(`Running on port ${port}`);

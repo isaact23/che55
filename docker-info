@@ -1,0 +1,2 @@
+sudo service docker restart
+sudo chown [username]:docker /var/run/docker.sock

@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR /usr/src/app/backend
+WORKDIR /usr/src/app/server
 COPY . .
 RUN npm install --production
 
